@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Tel</th>
+            <th scope="col">Company</th>
+            <th scope="col">Area</th>
+            <th scope="col">ImageUrl</th>
+            <th scope="col">Remake</th>
+            <th scope="col">CreateTime</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Uid</th>
+                <td>@item.Name</td>
+                <td>@item.Tel</td>
+                <td>@item.Company</td>
+                <td>@item.Area</td>
+                <td>@item.ImageUrl</td>
+                <td>@item.Remake</td>
+                <td>@item.CreateTime.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="~/js/db.js"></script>
+}
